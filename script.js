@@ -1,11 +1,24 @@
 let a = document.querySelectorAll('.bordr');
 let b = Array.from(a);
 let res = document.querySelector('.result');
+let uwin = 0;
+let cwin = 0;
 
 let borderelem;
 let borderCheck = 0;
 let CompText =document.querySelector('.comp');
 let btn = document.querySelector(".btn");
+
+let win =() => {
+  uwin =uwin +1;
+  document.querySelector('.youwin').innerHTML = `Your Points : ${uwin}`
+  
+}
+let lose =() => {
+  cwin =cwin +1;
+  document.querySelector('.compwin').innerHTML = `Computer Points : ${cwin}`
+  
+}
 
 for (let i = 0; i < b.length; i++) {
     b[i].addEventListener("click", (e) => {
@@ -36,10 +49,12 @@ for (let i = 0; i < b.length; i++) {
                         switch(CompuChoice) {
                             case "Paper":
                                 res.innerHTML ="Result : You Lose !!"
+                                lose();
                               
                               break;
                             case "Scissor":
                                 res.innerHTML ="Result : You Win !!"
+                                win();
 
                               
                               break;
@@ -51,10 +66,12 @@ for (let i = 0; i < b.length; i++) {
                         switch(CompuChoice) {
                             case "Stone":
                                 res.innerHTML ="Result : You Win !!"
+                                win();
                               
                               break;
                             case "Scissor":
                                 res.innerHTML ="Result : You Lose !!"
+                                lose();
 
                               
                               break;
@@ -66,10 +83,12 @@ for (let i = 0; i < b.length; i++) {
                         switch(CompuChoice) {
                             case "Paper":
                                 res.innerHTML ="Result : You Win !!"
+                                win();
                               
                               break;
                             case "Stone":
                                 res.innerHTML ="Result : You Lose !!"
+                                lose();
 
                               
                               break;
